@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Ja'far & Solihah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body { font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-cursive { font-family: 'Great Vibes', cursive; }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .overlay.hidden {
+            transform: translateY(-100%);
+        }
+
+        .btn-gold {
+            background-color: #d4af37;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #b8962e;
+            transform: scale(1.05);
+        }
+
+        .map-container iframe {
+            filter: grayscale(10%) contrast(1.1);
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <!-- Screen Pembuka -->
+    <div id="overlay" class="overlay p-6 text-center">
+        <h2 class="text-sm uppercase tracking-widest mb-4 italic">Undangan Pernikahan</h2>
+        <h1 class="font-cursive text-5xl text-[#d4af37] mb-6">Ja'far & Solihah</h1>
+        <div class="mb-8">
+            <p class="text-sm italic">Kepada Bapak/Ibu/Saudara/i:</p>
+            <h3 id="guest-name" class="text-xl font-bold mt-2">-</h3>
+        </div>
+        <button onclick="openInvitation()" class="btn-gold px-8 py-3 rounded-full shadow-lg flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            Buka Undangan
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="h-screen hero-bg flex items-center justify-center text-white text-center px-4">
+            <div class="animate__animated animate__fadeIn">
+                <p class="text-lg tracking-widest uppercase mb-4">The Wedding of</p>
+                <h1 class="font-cursive text-7xl md:text-9xl mb-4">Ja'far & Solihah</h1>
+                <p class="text-xl font-light italic">Minggu, 20 Mei 2029</p>
+            </div>
+        </section>
+
+        <!-- Ayat Suci -->
+        <section class="py-20 px-6 text-center max-w-4xl mx-auto">
+            <div class="mb-8 animate__animated animate__fadeInUp">
+                <p class="text-2xl font-serif mb-4 italic text-[#d4af37]">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya..."</p>
+                <p class="font-bold">(Ar-Rum: 21)</p>
+            </div>
+        </section>
+
+        <!-- Profil Pengantin -->
+        <section class="py-16 bg-white px-6">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="font-cursive text-5xl mb-12 text-[#d4af37]">Mempelai</h2>
+                
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 relative">
+                    <!-- Mempelai Pria -->
+                    <div class="w-full md:w-5/12 p-8 border border-stone-100 rounded-2xl shadow-sm bg-stone-50/50">
+                        <h3 class="font-serif text-3xl font-bold mb-2">Ja'far Sodik</h3>
+                        <p class="text-stone-500 font-semibold mb-1">bin</p>
+                        <p class="text-stone-700 font-bold mb-4">Bpk. Qomaruddin</p>
+                        <!-- Mengubah warna tulisan mempelai pria menjadi abu-abu -->
+                        <p class="text-sm text-stone-400 font-semibold italic uppercase tracking-tighter">Mempelai Pria</p>
+                    </div>
+                    
+                    <!-- Simbol & di Tengah -->
+                    <div class="flex items-center justify-center z-10">
+                        <span class="font-cursive text-6xl text-[#d4af37] animate__animated animate__pulse animate__infinite">&</span>
+                    </div>
+
+                    <!-- Mempelai Wanita -->
+                    <div class="w-full md:w-5/12 p-8 border border-stone-100 rounded-2xl shadow-sm bg-stone-50/50">
+                        <h3 class="font-serif text-3xl font-bold mb-2">Solihah</h3>
+                        <p class="text-stone-500 font-semibold mb-1">binti</p>
+                        <p class="text-stone-700 font-bold mb-4">Ibu Hasanah</p>
+                        <!-- Mengubah warna tulisan mempelai wanita menjadi abu-abu -->
+                        <p class="text-sm text-stone-400 font-semibold italic uppercase tracking-tighter">Mempelai Wanita</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acara & Waktu -->
+        <section class="py-20 bg-stone-100 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-serif text-4xl mb-10">Waktu & Lokasi</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-[#d4af37]">
+                        <h3 class="text-2xl font-bold mb-4">Akad Nikah</h3>
+                        <p class="font-bold">Minggu, 20 Mei 2029</p>
+                        <p>08.00 - 10.00 WIB</p>
+                        <p class="mt-4 text-stone-500 italic">Kediaman Mempelai Wanita</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-[#d4af37]">
+                        <h3 class="text-2xl font-bold mb-4">Resepsi</h3>
+                        <p class="font-bold">Minggu, 20 Mei 2029</p>
+                        <p>11.00 - Selesai</p>
+                        <p class="mt-4 text-stone-500 italic">Cibeber Bedeng</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm mb-12">
+                    <h3 class="text-xl font-bold mb-2">Lokasi Acara</h3>
+                    <p class="mb-6 font-semibold">Cibeber Bedeng, Cibeber, Kota Cilegon, Banten</p>
+                    
+                    <div class="aspect-video w-full rounded-lg overflow-hidden mb-6 map-container shadow-inner bg-stone-200">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15867.765666755866!2d106.0142!3d-6.0356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e418e384c2f821d%3A0x4015775569a7120!2sCibeber%2C%20Cilegon%20City%2C%20Banten!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                    <a href="https://maps.google.com/?q=Cibeber+Bedeng+Cilegon" target="_blank" class="btn-gold px-8 py-3 rounded-full inline-flex items-center gap-2 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Petunjuk Lokasi (Maps)
+                    </a>
+                </div>
+
+                <!-- Timer -->
+                <div class="mb-4 text-stone-500 uppercase tracking-widest text-sm font-semibold">Menghitung Hari</div>
+                <div id="countdown" class="grid grid-cols-4 gap-4 max-w-md mx-auto">
+                    <div class="bg-white border border-[#d4af37] p-4 rounded-xl shadow-sm">
+                        <span id="days" class="block text-2xl font-bold text-[#d4af37]">00</span>
+                        <span class="text-[10px] uppercase font-bold text-stone-400">Hari</span>
+                    </div>
+                    <div class="bg-white border border-[#d4af37] p-4 rounded-xl shadow-sm">
+                        <span id="hours" class="block text-2xl font-bold text-[#d4af37]">00</span>
+                        <span class="text-[10px] uppercase font-bold text-stone-400">Jam</span>
+                    </div>
+                    <div class="bg-white border border-[#d4af37] p-4 rounded-xl shadow-sm">
+                        <span id="minutes" class="block text-2xl font-bold text-[#d4af37]">00</span>
+                        <span class="text-[10px] uppercase font-bold text-stone-400">Menit</span>
+                    </div>
+                    <div class="bg-white border border-[#d4af37] p-4 rounded-xl shadow-sm">
+                        <span id="seconds" class="block text-2xl font-bold text-[#d4af37]">00</span>
+                        <span class="text-[10px] uppercase font-bold text-stone-400">Detik</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Penutup -->
+        <section class="py-20 px-6 text-center">
+            <h2 class="font-cursive text-4xl mb-6">Terima Kasih</h2>
+            <p class="max-w-2xl mx-auto text-stone-600 italic">
+                Doa restu Anda merupakan karunia yang sangat berarti bagi kami.
+            </p>
+            <div class="mt-12 font-serif">
+                <p>Kami yang berbahagia,</p>
+                <p class="text-3xl font-bold mt-4 text-[#d4af37] font-cursive">Ja'far & Solihah</p>
+                <p class="mt-2 text-stone-500">Beserta Seluruh Keluarga</p>
+            </div>
+        </section>
+
+        <footer class="py-8 bg-stone-900 text-stone-500 text-center text-xs">
+            &copy; 2029 - Created by Ja'far Sodik
+        </footer>
+    </main>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop shadow>
+        <source src="https://www.bensound.com/bensound-music/bensound-memories.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Logika Nama Tamu
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestName = urlParams.get('to') || 'Tamu Undangan';
+        document.getElementById('guest-name').innerText = guestName;
+
+        function openInvitation() {
+            document.getElementById('overlay').classList.add('hidden');
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(e => console.log("Audio autoplay disabled by browser"));
+            
+            // Trigger animation on open
+            document.querySelector('.hero-bg h1').classList.add('animate__animated', 'animate__zoomIn');
+        }
+
+        // Countdown Timer Target: 20 Mei 2029
+        const targetDate = new Date("May 20, 2029 08:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<div class='col-span-4 font-bold text-[#d4af37] text-center'>ACARA SEDANG BERLANGSUNG / SELESAI</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
